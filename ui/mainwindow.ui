@@ -195,6 +195,7 @@
     <addaction name="actionCacheCleaner"/>
     <addaction name="actionPacmanLogViewer"/>
     <addaction name="actionRepositoryEditor"/>
+    <addaction name="actionMirrorEditor"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuView"/>
@@ -577,6 +578,14 @@
    </property>
    <property name="text">
     <string>By file</string>
+   </property>
+  </action>
+  <action name="actionMirrorEditor">
+   <property name="text">
+    <string>&amp;Mirror Editor</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+M</string>
    </property>
   </action>
  </widget>

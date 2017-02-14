@@ -1527,6 +1527,15 @@ void MainWindow::launchCacheCleaner()
 }
 
 /*
+ * Launch Mirror Editor
+ */
+void MainWindow::launchMirrorEditor()
+{
+  m_unixCommand = new UnixCommand(this);
+  m_unixCommand->execCommandAsNormalUser(QLatin1String("octopi-mirroreditor"));
+}
+
+/*
  * Makes a gist with a bunch of system file contents.
  */
 void MainWindow::gistSysInfo()

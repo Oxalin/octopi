@@ -73,6 +73,7 @@ void MainWindow::refreshMenuTools()
   static bool connectorPlv=false;
   static bool connectorRepo=false;
   static bool connectorCleaner=false;
+  static bool connectorMirror=false;
   static bool connectorGist=false;
   int availableTools=0;
 
@@ -132,6 +133,21 @@ void MainWindow::refreshMenuTools()
   }
   else
     ui->actionCacheCleaner->setVisible(false);
+
+  if(UnixCommand::hasTheExecutable("octopi-mirroreditor") && UnixCommand::getLinuxDistro() != ectn_KAOS)
+  {
+    availableTools++;
+    ui->menuTools->menuAction()->setVisible(true);
+    ui->actionMirrorEditor->setVisible(true);
+
+    if (!connectorMirror)
+    {
+      connect(ui->actionMirrorEditor, SIGNAL(triggered()), this, SLOT(launchMirrorEditor()));
+      connectorMirror=true;
+    }
+  }
+  else
+    ui->actionMirrorEditor->setVisible(false);
 
   if (UnixCommand::hasTheExecutable("gist"))
   {

@@ -445,6 +445,7 @@ private slots:
   void launchPLV();
   void launchRepoEditor();
   void launchCacheCleaner();
+  void launchMirrorEditor();
   void gistSysInfo();
   void refreshAppIcon();
 
